@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace RedesNeuronales
 {
-    public partial class Form1 : Form
+    public partial class inicial : Form
     {
-        public Form1()
+        public inicial()
         {
             InitializeComponent();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
