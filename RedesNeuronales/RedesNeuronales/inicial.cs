@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-
 namespace RedesNeuronales
 {
     public partial class inicial : Form
@@ -20,7 +19,7 @@ namespace RedesNeuronales
         int NumeroDeCapas = 0, NeuronasDeEntrada = 0, NeuronasDeSalida = 0, NPatrones = 4;
         Int32 iteraciones = 0;
         int[] n;
-        double Alfa = 0.75, ErrorMinimo = 0.0001 , IteracionesMaximas = 10000.0;
+        double Alfa = 0.75, ErrorMinimo = 0.0001 , IteracionesMaximas = 10000.0, NeuronasMaximas=0.0;
 
         public inicial()
         {
@@ -64,8 +63,20 @@ namespace RedesNeuronales
             int ZTalla = (int)comboBox20.SelectedValue;
             int ZTipo = (int)comboBox17.SelectedValue;
             int ZDiseno = (int)comboBox19.SelectedValue;
-            PatronesdeEntrada = new double [NPatrones + 1 , arquitectura[1]];
-            PatronesSalida = new double [NPatrones + 1 , arquitectura[1]];
+            try
+            {
+                int[] temp = new int[NumeroDeCapas + 1];
+                Array.Copy(arquitectura, temp, arquitectura.Length);
+                Array.Sort(temp);
+                NeuronasMaximas = temp[temp.Length - 1];
+                Perceptron neurona = new Perceptron();
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("-->"+ex);
+            }
 
         }
 

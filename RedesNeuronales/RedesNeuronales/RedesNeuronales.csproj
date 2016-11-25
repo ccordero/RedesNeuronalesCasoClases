@@ -52,7 +52,7 @@
     <Compile Include="inicial.Designer.cs">
       <DependentUpon>inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Perceptron\Perceptron.cs" />
+    <Compile Include="Perceptron.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="inicial.resx">
